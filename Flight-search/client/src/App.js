@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import TopNavigation from './component/TopNavigation';
+
+import { blue } from '@mui/material/colors';
+import AppRoutes from './AppRoutes';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header>
+      <div style ={{minHeight:"10vh",width:'100%', backgroundColor:'rgb(25 118 210 / 55%)'}}></div>
+        <TopNavigation />
+     </header>
+
+     <main>
+     <div className='main-body'>
+     <h1>Welcome</h1>
+     <AppRoutes/>
+     </div>
+     </main>
+     <footer>
+        <div style ={{minHeight:"10vh",width:'100%', backgroundColor:'rgb(25 118 210 / 55%)'}}></div>
+     </footer>
     </div>
   );
 }
