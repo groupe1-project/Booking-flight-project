@@ -19,5 +19,8 @@ public void saveFlight(Flight flight){
 public List<Flight> findFlightsByDate(String origin, String dest, String date){
     return repo.findByOriginAndDestAndDepartureDate(origin, dest, date);
 }
+public List<Flight> findFlightsBetween(String starDate,String endDate){
+    return repo.findByDepartureDateBetween(starDate, endDate);
+}
     
 }

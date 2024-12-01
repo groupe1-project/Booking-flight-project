@@ -15,12 +15,40 @@ export default function LandingView(props){
 
         const[travelDate, settravelDate] = useState(new Date());
         const[returnDate,setReturnDate] = useState(new Date());
+        const [formData, setFormData] = useState({
+            origin: "",
+            dest:"",
+            date :new Date(),
+            returnDate : new Date(),
+            numTravellers :""
+        })
+
+        const handleInputChange = event  => {
+            const {name,value} = event.target;
+
+            setFormData(preDatab => ({
+                ...prevData, [name]:value
+            }));
+        }
+        const dispatch = useDispatch();
+
+        const handleSearch =() =>{
+
+            const info = {};
+            info.origin=
+            info.dest=
+            info.data=
+
+                dispatch(searchFlights({})).then(resp => {
+                    console.log("request complete");
+                })
+        }
 
         return (
             <div>
                 <Stack direction="column" justifyContent="center">
                 <Container maxWidth="sm">
-                   
+                   <form>
                    <Paper elevation={10}>
                     <h3>Enter Search Criteria to find flights</h3>
                     <div className='inner-search-form'>
@@ -46,6 +74,8 @@ export default function LandingView(props){
                             label="From"
                             variant="outlined"
                         // helperText = {firstNameError}
+                             name = "origin"
+                             onChange={handleInputChange}
                         />
                         &nbsp;
                        <TextField
@@ -53,8 +83,9 @@ export default function LandingView(props){
                         //onChange={(event) =>handleFirstNameChange(event.target.value)}
                         label="to"
                         variant="outlined"
+                        name = "dest"
                        // helperText = {firstNameError}
-                    
+                       onChange={handleInputChange}
                     
                      />
                     </div>
@@ -63,21 +94,25 @@ export default function LandingView(props){
                         <Stack direction ="row">
                     <TextField
                         
-                        onChange={(event) =>settravelDate(event.target.value)}
+                        //onChange={(event) =>settravelDate(event.target.value)}
                            label="Date"
                            variant="outlined"
                            type ="date"
                            value = {travelDate}
+                           name ="date"
                        // helperText = {firstNameError}
+                       onChange={handleInputChange}
                        />
                         &nbsp;
                     <TextField
                         
-                        onChange={(event) =>setReturnDate(event.target.value)}
+                       // onChange={(event) =>setReturnDate(event.target.value)}
                            label="Return date"
                            variant="outlined"
                            type ="date"
                            value ={returnDate}
+                           name = "returnDate"
+                           onChange={handleInputChange}
                            
                        // helperText = {firstNameError}
                     />
@@ -87,6 +122,8 @@ export default function LandingView(props){
                         //onChange={(event) =>handleFirstNameChange(event.target.value)}
                            label="# travellers"
                            variant="outlined"
+                           name = "numTravellers"
+                           onChange={handleInputChange}
                           
                        // helperText = {firstNameError}
                     />
@@ -95,11 +132,12 @@ export default function LandingView(props){
                     <br/>
 
                     <div>
-                        <Button size='large' variant ="contained" color ='success'>Search</Button>
+                        <Button onClick={() => handleSearch()} size='large' variant ="contained" color ='success'>Search</Button>
                     </div>
 
                     </div>
                     </Paper>
+                    </form>
                     </Container>
                     <div>
                          <Stack direction="column" justifyContent="center">

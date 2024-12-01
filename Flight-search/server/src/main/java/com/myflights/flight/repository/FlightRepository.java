@@ -9,5 +9,5 @@ import com.myflights.flight.entity.Flight;
 
 public interface FlightRepository extends JpaRepository<Flight, Integer>{
     List<Flight> findByOriginAndDestAndDepartureDate(String origin, String dest, String departureDate);
-
+    List<Flight> findByDepartureDateBetween(String startDate,String endDate);
 }
