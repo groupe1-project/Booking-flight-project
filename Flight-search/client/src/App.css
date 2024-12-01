@@ -9,3 +9,38 @@
 h3{
   color: green ;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(11, 11, 40, 0.55);
+  color: rgb(24, 23, 23);
+}
+
+.logo img {
+  height: 50px; /* Ajustez la taille du logo */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 20;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 100px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}

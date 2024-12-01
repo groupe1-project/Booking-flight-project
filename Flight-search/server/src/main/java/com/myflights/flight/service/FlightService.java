@@ -2,6 +2,7 @@ package com.myflights.flight.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.myflights.flight.entity.Flight;
@@ -9,7 +10,7 @@ import com.myflights.flight.repository.FlightRepository;
  
 @Service
 public class FlightService {
-
+@Autowired
 private FlightRepository repo;
 
 
