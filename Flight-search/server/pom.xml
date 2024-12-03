@@ -68,11 +68,13 @@
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
-		<groupId>org.springframework.data</groupId>
-		<artifactId>spring-data-bom</artifactId>
-		<version>2023.0.2</version>
-		<scope>import</scope>
-		<type>pom</type>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-bom</artifactId>
+			<version>2023.0.2</version>
+			<scope>import</scope>
+			<type>pom</type>
+		</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<build>
