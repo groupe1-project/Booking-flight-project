@@ -34,7 +34,8 @@ public class AppController {
 
    // public List<Flight>findFlights(@RequestParam() String origin, @RequestParam() String dest, @RequestParam() String date){
         try {
-            List<Flight> flights = flightService.findFlightsByDate( origin,dest,date );
+            //List<Flight> flights = flightService.findFlightsByDate( origin,dest,date );
+            List<Flight> flights = flightService.findFlights(origin, dest);
             resp.setResponseData(flights);
             resp.setStatusCode(HttpStatus.OK);
             resp.setMessageType("SUCCESS");

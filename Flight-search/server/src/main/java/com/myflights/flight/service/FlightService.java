@@ -23,6 +23,9 @@ public List<Flight> findFlightsByDate(String origin, String dest, String date){
 public List<Flight> findFlightsBetween(String starDate,String endDate){
     return repo.findByDepartureDateBetween(starDate, endDate);
 }
+public List<Flight> findFlights(String origin, String dest){
+    return repo.findByOriginAndDest(origin, dest);
+}
 //public FlightRepository getRepo() {
   //  return repo;
 //}
